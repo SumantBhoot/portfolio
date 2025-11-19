@@ -2,6 +2,11 @@
 
 A personal portfolio website showcasing information about Sumant Bhoot - a programming enthusiast exploring DSA, competitive programming, and web development.
 
+## Live Demo
+
+🌐 **Visit the portfolio:**  
+**https://sumantbhoot.github.io/portfolio/**
+
 ## Features
 
 - **Dynamic Typed Text Animation**: Engaging welcome message with typing animation effect
