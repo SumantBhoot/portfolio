@@ -1,0 +1,526 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: start;
+    color: white;
+    background-color: rgb(20, 20, 20);
+    padding: 2rem;
+    font-family: "Courier New", Consolas, "Lucida Console", monospace;
+    letter-spacing: 0.05em;
+    font-size: 3rem;
+}
+
+#typed-box {
+    height: 14rem;
+}
+
+.golden-button {
+    padding: 0.4rem 0.8rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: gold;
+    color: rgb(20, 20, 20);
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.golden-button:hover {
+    box-shadow: 0 0 20px -2px gold;
+}
+
+.dark-button {
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+img.defer-load {
+    visibility: hidden;
+    opacity: 0;
+}
+
+img.defer-load.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+}
+
+#collapseMenuButton, #collapseMenuButton:hover {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
+    font-family: monospace;
+    border: 0.08rem solid white;
+    color: white;
+    background-color: rgb(20, 20, 20);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+#collapseMenuButton[aria-expanded="true"] {
+    color: rgb(20, 20, 20);
+    background-color: white;
+}
+
+#collapseMenu ul {
+    list-style-type: none;
+    font-size: 1rem;
+    font-family: "Lucida Console", monospace;
+    letter-spacing: 0.03em;
+    margin: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    padding: 0;
+}
+
+#collapseMenu a {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
+
+#collapseMenu :is(a.active, a:hover) {
+    color: white;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    font-family: monospace;
+    letter-spacing: 0.04em;
+}
+
+main h3 {
+    font-size: 1.4rem;
+    font-family: monospace;
+    letter-spacing: 0.03em;
+}
+
+main h4 {
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+main > div {
+    display: flex;
+    padding: 1rem;
+}
+
+#cards-section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.my-card {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+    border: 1.5px solid black;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.my-card:hover {
+    box-shadow: 0 0 15px -2px gray;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.my-card img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+}
+
+.my-card ul {
+    padding-left: 0rem;
+    list-style: none;
+}
+
+.my-card p {
+    margin: 0.2rem;
+}
+
+.my-card a:not(.dark-button) {
+    color: black;
+    margin: 0rem 0.5rem;
+}
+
+.pill {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 9999px;
+    padding: 0.3rem 0.6rem;
+    margin: 0.3rem;
+}
+
+.pill:hover {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    transition: color 0.1s ease-in-out,
+                background-color 0.1s ease-in-out;
+}
+
+.pill i {
+    opacity: 0;
+    font-size: 0;
+    transition: font-size 0.1s ease-in-out,
+                opacity 0s ease-in-out;
+}
+
+.my-card:hover i {
+    opacity: 1;
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+    transition: font-size 0.1s ease-in-out,
+                opacity 0.3s ease-in-out;
+}
+
+footer.small {
+    font-family: "Lucida Console", monospace;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 1rem 1rem 1rem;
+    align-self: flex-end;
+}
+
+.big {
+    display: none;
+}
+
+.small {
+    display: block;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.fadeOut-2 {
+    animation: fadeOut 0.3s ease-out 2s forwards;
+}
+
+.fadeOut-1 {
+    animation: fadeOut 0.3s ease-out 1s forwards;
+}
+
+@media only screen and (min-width: 540px) {
+    #typed-box {
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 821px) and (min-height: 501px) {
+
+    .big {
+        display: block;
+    }
+
+    .small {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0rem;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background-color: rgb(20, 20, 20);
+        padding: 2rem 1rem;
+        font-family: "Courier New", Consolas, "Lucida Console", monospace;
+        letter-spacing: 0.05em;
+        font-size: 3rem;
+    }
+
+    #typed-box {
+        height: auto;
+    }
+
+    main {
+        flex-grow: 1;
+        position: relative;
+
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    #offcanvasSidebar {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        --bs-offcanvas-width: 25%;
+        --bs-offcanvas-bg: rgb(30, 30, 30);
+        gap: 6rem;
+    }
+
+    .stuck {
+        position: fixed !important;
+        top: 0 !important;
+    }
+
+    #offcanvasSidebar .offcanvas-body {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #offcanvasSidebar ul {
+        list-style-type: none;
+        font-size: 1.5rem;
+        font-family: "Lucida Console", monospace;
+        letter-spacing: 0.04em;
+
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+
+        padding: 0;
+        text-align: center;
+    }
+
+    #offcanvasSidebar a {
+        color: rgb(180, 180, 180);
+        text-decoration: none;
+    }
+
+    #offcanvasSidebar :is(a.active, a:hover) {
+        color: white;
+    }
+
+    #offcanvasSidebar a.active {
+        cursor: pointer;
+    }
+
+    #offcanvasSidebar footer {
+        max-width: 15rem;
+        opacity: 0;
+        color: white;
+        font-family: "Lucida Console", monospace;
+        transition: opacity 0.2s ease-in;
+    }
+
+    #sidebar-trigger {
+        display: inline-block;
+        font-size: 1.2rem;
+        --bs-btn-border-width: 0.1rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .my-card {
+        max-width: 38rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 1rem;
+        border: 1.5px solid black;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .my-card img {
+        width: 12rem;
+        height: 12rem;
+        padding: 0.7rem;
+        border-radius: 100%;
+        margin-bottom: 0rem;
+    }
+
+    .my-card-text {
+        font-size: 0.9rem;
+    }
+
+    #project-gallery {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 2rem 1rem 3rem 1rem;
+    }
+
+    #project-gallery > div {
+        gap: 2.2rem;
+    }
+
+    #project-gallery .carousel {
+        max-width: 20rem;
+        width: 90%;
+        height: auto;
+        overflow: hidden;
+        border: 1.5px solid black;
+        transition: transform 0.3s ease, border-radius 0.3s ease;
+    }
+
+    #project-gallery .carousel:hover {
+        cursor: pointer;
+        border-radius: 30px;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px -2px gray;
+        transition: transform 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease-in-out;
+    }
+
+    #project-gallery .carousel img {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: filter 0.15s ease, transform 0.3s ease, opacity 0.2s ease-in;
+    }
+
+    #project-gallery .carousel:hover img {
+        filter: grayscale(0%);
+        transform: scale(1.1);
+        transform-origin: center center;
+        transition: filter 0.15s ease, transform 0.3s ease;
+    }
+
+    #project-gallery .vid-wrapper {
+        margin-top: 0.5rem;
+        width: 15rem;
+        max-width: 90%;
+        overflow: hidden;
+        height: auto;
+        border: 1.5px solid black;
+        transition: transform 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease-in-out;
+    }
+
+    #project-gallery .vid-wrapper:hover {
+        border-radius: 30px;
+        transform: scale(1.1);
+        box-shadow: 0 0 15px -2px gray;
+    }
+
+    #project-gallery .vid-wrapper video {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: filter 0.15s ease;
+    }
+
+    #project-gallery .vid-wrapper:hover video {
+        filter: grayscale(0%);
+    }
+
+    .modal .btn-close {
+        --bs-btn-close-focus-shadow: 0 0 0 0.25rem #adb5bd;
+    }
+
+    .modal h1 {
+        font-size: 1.5rem;
+        font-family: monospace;
+        letter-spacing: 0.04em;
+        margin-right: 2rem;
+    }
+
+    .modal-dialog {
+        max-width: fit-content;
+    }
+
+    .modal .carousel-inner {
+        height: 30rem;
+        width: 30rem;
+        border-radius: 30px;
+        box-shadow: 0 0 10px -2px gray;
+        overflow: hidden;
+    }
+
+    .modal .carousel-inner img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .modal .carousel :is(.carousel-control-next, .carousel-control-prev) {
+        position: static;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0;
+        padding: 0 0.2rem;
+        color: #fff;
+        text-align: center;
+        background: 0 0;
+        border: 0;
+        opacity: .5;
+        transition: opacity .15s ease;
+    }
+
+    .modal .carousel :is(.carousel-control-next, .carousel-control-prev):hover {
+        opacity: 1;
+    }
+
+    .modal.fade.show .modal-dialog {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .modal.fade .modal-dialog {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: calc(200%) center;
+        transition: transform 0.15s linear, opacity 0.15s linear;
+    }
+
+    .modal-backdrop {
+        transition: opacity 0.15s linear;
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.8;
+    }
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.my-z-1000 {
+    z-index: 1000;
+}
+
+.my-fs-1 {
+    font-size: 1rem;
+}
+
+.f-1 {
+    flex: 1 1 0%;
+}
+
+.f-2 {
+    flex: 2 2 0%;
+}
+
+.my-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.inline-block {
+    display: inline-block;
+}

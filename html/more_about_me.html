@@ -1,0 +1,199 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/dd65ea5b5b.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Indie+Flower&family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link href="../css/more_about_me.css" rel="stylesheet" />
+        <script src="../js/more_about_me.js"></script>
+        <script src="../index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>More About Me</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="typed-box">
+                <div id="typed-h1-strings">
+                    <h1>This is More About Sumant</h1>
+                    <h1>This is More About Sumant</h1>
+                </div>
+                <span id="typed-h1"></span>
+            </div>
+
+            <button id="contactMe" class="golden-button">Contact Me</button>
+
+            <script>
+                var typed = new Typed('#typed-h1', {
+                    stringsElement: '#typed-h1-strings',
+                    typeSpeed: 50,
+                    fadeOut: true,
+                    onStringTyped: (idx, self) => {
+                        if (idx == 0) {
+                            setTimeout(() => {
+                                document
+                                    .querySelector('header')
+                                    .classList.add('animate-header')
+                                self.cursor.remove()
+                            }, 500)
+                        }
+                    },
+                    preStringTyped: (idx, self) => {
+                        if (idx == 1) {
+                            document
+                                .querySelector('#typed-h1')
+                                .classList.add('indie-flower-regular')
+                        }
+                    },
+                })
+            </script>
+        </header>
+        <main class="indie-flower-regular">
+            <div id="hobbies-header">
+                <h1 class="luckiest-guy-regular">
+                    My<br />
+                    Hobeez
+                </h1>
+                <div class="small btn-group-vertical" role="group" aria-label="hobbies-navigation-bar">
+                    <button type="button" class="btn" data-hobby="bhangra">Bhangra</button>
+                    <button type="button" class="btn" data-hobby="cube">Cubing</button>
+                    <button type="button" class="btn" data-hobby="crime">Crime Thrillers</button>
+                    <button type="button" class="btn" data-hobby="journal">Journaling</button>
+                </div>
+
+                <div class="cloud big">
+                    <div id="hobbiesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-hobby="bhangra">
+                                <img src="../assets/bhangra1.webp" class="defer-load"
+                                    alt="create project button page" />
+                                <div class="img-caption">
+                                    Bhangra<br />
+                                    <span class="big">↓</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-hobby="cube">
+                                <img src="../assets/cube1.webp" class="defer-load"
+                                    alt="3x3 cube"/>
+                                <div class="img-caption">
+                                    Cubing<br />
+                                    <span class="big">↓</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-hobby="crime">
+                                <img src="../assets/crime1.webp" class="defer-load"
+                                    alt="sidebar showing projects list"/>
+                                <div class="img-caption">
+                                    Crime Thrillers<br />
+                                    <span class="big">↓</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-hobby="journal">
+                                <img src="../assets/journal1.webp" class="defer-load"
+                                    alt="are you sure you want to delete project modal"/>
+                                <div class="img-caption">
+                                    Journaling<br />
+                                    <span class="big">↓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header end -->
+            <section class="hobby" data-id="bhangra">
+                <img src="../assets/bhangra2.webp" class="defer-load"
+                    alt="are you sure you want to delete project modal" style="border-radius: 40%" />
+
+                <div class="cloud">
+                    <h2>Bhangra</h2>
+                    <p>
+                        <!-- The quick brown fox jumps over the lazy dog. This sentence is often used to
+                        test fonts and layouts because it contains all the letters of the alphabet.
+                        It’s a handy piece of text for checking how your design looks with real words
+                        instead of placeholders. -->
+                        It was love at first sight when I saw Bhangra at my college orientation — the energy and vibe were just so happy, cool, and lit.
+                        Bhangra is punjabi folk dance. It's origins go back to farmers celebrating a good harvest by dancing together in fields.
+                        That's why the only rule in Bhangra is "Keep smiling :)".
+                        It's an awesome feeling when we all smile together, dance together, celebrate together. Check out my performances —<br>
+                        <a class="link-body-emphasis" href="https://youtu.be/ZZcd0uTbbvc?feature=shared">Bhangra</a>,
+                        <a class="link-body-emphasis" href="https://youtu.be/d8P1QcIFXTo?feature=shared">Bhangra</a>,
+                        <a>Bhangra</a> &lt;3
+                    </p>
+                </div>
+            </section>
+            <section class="hobby reversed" data-id="cube">
+                <img src="../assets/cube2.webp" class="defer-load"
+                    alt="are you sure you want to delete project modal" />
+
+                <div class="cloud">
+                    <h2>Cubing</h2>
+                    <p>
+                        It was the best time of my life when I started cubing with my friends — Arjit & Prads &lt;3.
+                        So, I always get a positive vibe from the cube. We used to play & compete & give dares to the losers.
+                        I'm no speed-cuber but my stats are —<br/>
+                        PB single : 26.42s<br/>
+                        PB Ao5 : 37.02s
+                    </p>
+                </div>
+            </section>
+            <section class="hobby" data-id="crime">
+                <img src="../assets/crime2.webp" class="defer-load"
+                    alt="are you sure you want to delete project modal" style="border-radius: 40%" />
+
+                <div class="cloud">
+                    <h2>Crime Thrillers</h2>
+                    <p>
+                        It started with the series Sherlock — eureka, I found my genre.
+                        There’s just something about these dark themes: they pull me in so intensely that I forget everything around me.
+                        Anyways, my top recommendations are —<br>
+                        <a class="link-body-emphasis" href="https://youtu.be/VaT7IYQgyqo?feature=shared">Sherlock</a> : awesome<span class="bigSpan">, clever, iconic</span><br>
+                        <a class="link-body-emphasis" href="https://youtu.be/YQeUmSD1c3g?feature=shared">Dexter</a> : unique<span class="bigSpan">, dark, twisted</span><br>
+                        <a class="link-body-emphasis" href="https://open.spotify.com/show/4BuXlpcana6xU2ctfZ3qgZ?si=3d66906919cb4bb5">BhaskarBose</a> : desi<span class="bigSpan">, engaging</span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="hobby reversed" data-id="journal">
+                <img src="../assets/journal2.webp" class="defer-load"
+                    alt="are you sure you want to delete project modal" />
+
+                <div class="cloud">
+                    <h2>Journaling</h2>
+                    <p>
+                        I got a diary as a gift, and it turned out to be the best gift of my life.
+                        Writing is powerful — you can plan, learn, and feel freely.
+                        At first, I used it for study planning, but once I entered college, it became my best (and only) friend.
+                        I shared every moment with it — happy or sad.
+                        I recommend it to anyone, whether for coping with life, gratitude, or simply improvement.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer class="gochi-hand-regular">
+            <div id="navs">
+                <div>
+                    <a class="pill" id="homePill" href="../index.html">homePage</a>
+                    <a class="pill" id="aboutPill" href="../html/about_me.html">aboutMe</a>
+                </div>
+                <div>
+                    <a class="pill disabled">moreAboutMe</a>
+                    <a class="pill" id="allPill" href="../html/all_about_me.html">allAboutMe</a>
+                </div>
+            </div>
+            <div class="indie-flower-regular">© 2025 Sumant Bhoot • Built with 💙 and clean code</div>
+        </footer>
+    </body>
+    <script src="../js/defer-img-load.js"></script>
+</html>

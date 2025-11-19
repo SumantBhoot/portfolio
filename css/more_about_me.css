@@ -1,0 +1,495 @@
+.indie-flower-regular {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.luckiest-guy-regular {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gochi-hand-regular {
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.big {
+    display: none;
+}
+
+.bigSpan {
+    display: none;
+}
+
+.cloud {
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition:
+        background-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.cloud:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes black-to-transparent {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: transparent;
+        color: #333333;
+    }
+}
+
+@keyframes upDown {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.6rem);
+    }
+}
+
+img.defer-load {
+    visibility: hidden;
+    opacity: 0;
+}
+
+img.defer-load.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+/* Utilities END */
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+body {
+    gap: 2rem;
+    background-color: #b8d7e0;
+    background-image: url(../assets/sky_background.webp);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: start;
+    color: white;
+    background-color: rgb(20, 20, 20);
+    padding: 2rem;
+    font-family: 'Courier New', Consolas, 'Lucida Console', monospace;
+    letter-spacing: 0.05em;
+    font-size: 3rem;
+}
+
+#typed-box {
+    height: 14rem;
+}
+
+.animate-header .indie-flower-regular {
+    font-size: 3.3rem;
+}
+
+.golden-button {
+    padding: 0.4rem 0.8rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: gold;
+    color: rgb(20, 20, 20);
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.golden-button:hover {
+    box-shadow: 0 0 20px -2px gold;
+}
+
+.animate-header {
+    animation: black-to-transparent 0.8s ease-in-out forwards;
+}
+
+main {
+    color: #555555;
+    flex-grow: 1;
+    padding: 0 1.3rem;
+}
+
+#hobbies-header {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+#hobbies-header h1 {
+    color: #5c80be;
+    text-align: center;
+    font-size: 25vw;
+    animation: fadeInUp 1s ease;
+}
+
+#hobbies-header .btn-group-vertical {
+    animation: fadeInUp 2s ease;
+    border-radius: 30px;
+    --bs-border-radius: 30px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#hobbies-header .btn {
+    padding: 0.5rem 2rem;
+    font-size: 1.7rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#hobbies-header .btn:hover {
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#hobbies-header .cloud {
+    width: 100%;
+    animation:
+        upDown 5s ease-in-out 1s infinite,
+        fadeInUp 1.5s ease;
+}
+
+.hobby {
+    margin: 4rem 0;
+}
+
+.hobby > * {
+    margin: 1.5rem 0;
+}
+
+.hobby img {
+    border: none;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    animation:
+        upDown 4s ease-in-out infinite,
+        fadeIn 2s ease;
+}
+
+.hobby .cloud {
+    animation:
+        upDown 5s ease-in-out 1s infinite,
+        fadeInUp 1.5s ease;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-style: italic;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    flex-grow: 1;
+    padding: 0 1rem 1rem 1rem;
+    animation: fadeInUp 2s ease;
+}
+
+#navs {
+    margin: 0 0 4rem 0;
+}
+
+#navs > div {
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.pill {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.pill:hover {
+    transform: scale(1.1);
+}
+
+.pill.disabled {
+    color: #55a6f5;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pill.disabled:hover {
+    transform: none;
+}
+
+#homePill {
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#aboutPill {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#allPill {
+    color: white;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+footer > :last-child {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: auto;
+    text-align: center;
+}
+
+@media only screen and (min-width: 821px) {
+    .big {
+        display: block;
+    }
+
+    .bigSpan {
+        display: inline;
+    }
+
+    .small {
+        display: none;
+    }
+
+    .cloud {
+        padding: 1.5rem;
+    }
+    /* Utilities END */
+
+    header {
+        height: 8rem;
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0rem;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background-color: rgb(20, 20, 20);
+        padding: 2rem 1rem;
+        font-family: 'Courier New', Consolas, 'Lucida Console', monospace;
+        letter-spacing: 0.05em;
+        font-size: 3rem;
+    }
+
+    #typed-box {
+        height: 100%;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    #hobbies-header {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    #hobbies-header h1 {
+        width: 65%;
+        height: 35vw;
+        text-align: center;
+        font-size: min(15vw, 13rem);
+        animation:
+            upDown 6s ease-in-out infinite,
+            fadeInLeft 1.5s ease;
+    }
+
+    #hobbies-header .cloud {
+        width: min(35%, 32rem);
+        border-radius: 20px 0 0 20px;
+        animation:
+            upDown 5s ease-in-out 1s infinite,
+            fadeInRight 2s ease;
+    }
+
+    #hobbiesCarousel {
+        width: 100%;
+        border-radius: 80px;
+        overflow: hidden;
+        transition: border-radius 0.6s ease;
+    }
+
+    #hobbiesCarousel:hover {
+        border-radius: 100px;
+    }
+
+    #hobbiesCarousel img {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        transition: opacity 0.3s ease;
+    }
+
+    #hobbiesCarousel .carousel-item {
+        position: relative;
+    }
+
+    #hobbiesCarousel .carousel-item:hover img {
+        opacity: 0;
+    }
+
+    #hobbiesCarousel .img-caption {
+        cursor: pointer;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        line-height: 1;
+        opacity: 0;
+        transition:
+            opacity 0.1s ease,
+            font-size 0.3s ease 0.3s;
+    }
+
+    #hobbiesCarousel .carousel-item:hover .img-caption {
+        font-size: min(6rem, 8vw);
+        opacity: 1;
+        transition:
+            opacity 0.15s ease 0.2s,
+            font-size 0.1s ease-in-out 0.15s;
+    }
+
+    .hobby {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        margin: 6rem 2rem;
+    }
+
+    .hobby.reversed {
+        flex-flow: row-reverse nowrap;
+    }
+
+    .hobby img {
+        border: none;
+        width: 40%;
+        height: auto;
+        margin: 0;
+        animation:
+            upDown 4s ease-in-out 0.5s infinite,
+            fadeInUp 1.5s ease;
+    }
+
+    .hobby .cloud {
+        margin: 0;
+        width: 50%;
+        padding: 2rem 1.5rem;
+        animation:
+            upDown 5s ease-in-out 1s infinite,
+            fadeInUp 1.5s ease;
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #navs {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        margin: 0 0 2rem 0;
+    }
+
+    #navs > div {
+        flex: 1 1 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+
+    .pill {
+        border-radius: 25px;
+        padding: 0.5rem 1.5rem;
+        text-decoration: none;
+        color: #55a6f5;
+        background-color: rgba(255, 255, 255, 0.35);
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .pill.disabled {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pill.disabled:hover {
+        cursor: default;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .pill:hover {
+        cursor: pointer;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+    }
+
+    #homePill {
+        color: #55a6f5;
+        background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    #aboutPill {
+        color: #55a6f5;
+        background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    #allPill {
+        color: #55a6f5;
+        background-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    #homePill:hover {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    #aboutPill:hover {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    #allPill:hover {
+        color: white;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+}

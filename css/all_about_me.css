@@ -1,0 +1,408 @@
+.indie-flower-regular {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.luckiest-guy-regular {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gochi-hand-regular {
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.big {
+    display: none;
+}
+
+@keyframes upDown {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.6rem);
+    }
+}
+
+@keyframes backFadeIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes frontFadeOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+        display: none;
+    }
+}
+
+.animate-in {
+    animation: backFadeIn 1.5s ease-out forwards !important;
+}
+
+.animate-out {
+    animation: frontFadeOut 2s ease-in-out forwards !important;
+}
+
+.bean {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.35);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dark {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.cloud {
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition:
+        background-color 0.5s ease,
+        box-shadow 0.5s ease;
+    animation:
+        upDown 5s ease-in-out var(--delay) infinite;
+}
+
+.cloud:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+img.defer-load {
+    visibility: hidden;
+    opacity: 0;
+}
+
+img.defer-load.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+/* Utilities END */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+body {
+    background-color: #b8d7e0;
+    background-image: url(../assets/sky_background.webp);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: start;
+    background-color: transparent;
+    color: #333333;
+    padding: 2rem;
+    letter-spacing: 0.05em;
+    font-size: 3.3rem;
+}
+
+#typed-box {
+    position: relative;
+}
+
+#typed-h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.golden-button {
+    padding: 0.4rem 0.8rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: gold;
+    color: rgb(20, 20, 20);
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.golden-button:hover {
+    box-shadow: 0 0 20px -2px gold;
+}
+
+#collapseMenuButton, #collapseMenuButton:hover {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.7rem;
+    font-family: monospace;
+    color: #333333;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+#collapseMenuButton[aria-expanded="true"] {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#collapseMenu ul {
+    list-style-type: none;
+    font-size: 1.1rem;
+    font-family: "Lucida Console", monospace;
+    letter-spacing: 0.03em;
+    margin: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    padding: 0;
+}
+
+#collapseMenu a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+}
+
+#collapseMenu :is(a.active, a:hover) {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+}
+
+#chat-container {
+    flex-grow: 1;
+    padding: 1rem 1rem 1.5rem;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    font-family: monospace;
+    color: #555555;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+#chat-messages > * {
+    animation: fadeInUp 0.2s ease-in-out;
+}
+
+#chat-form {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    gap: 0.8rem;
+}
+
+#chat-form input {
+    outline: none;
+    min-width: 0;
+    flex-grow: 1;
+    border: 2px solid gray;
+}
+
+#chat-form input:focus {
+    transform: scale(1.03);
+    border: 2px solid #555555;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+
+#chat-form button {
+    border: none;
+    border-radius: 100px;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chat-form button:not(:disabled):hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (min-width: 821px) {
+    .big {
+        display: block;
+    }
+
+    .small {
+        display: none;
+    }
+
+    .cloud {
+        padding: 1.5rem;
+    }
+    /* Utilities END */
+
+    header {
+        height: 8rem;
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        color: #333333;
+        padding: 2rem 1rem;
+        letter-spacing: 0.05em;
+        font-size: 3.4rem;
+    }
+
+    #typed-box {
+        height: 100%;
+        display: flex;
+    }
+
+    #typed-h1 {
+        flex-grow: 1;
+    }
+
+    #chat-container {
+        flex-grow: 1;
+        width: min(70%, 60rem);
+        margin: auto;
+        padding: 1rem 1rem 2rem;
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        font-family: monospace;
+        color: #555555;
+    }
+
+    #chat-messages::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #chat-messages::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    #chat-messages::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+    }
+
+    #chat-messages.scrolling::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    #chat-form {
+        align-self: flex-end;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4.5fr 1fr;
+    }
+
+    #chat-form input {
+        grid-column: 2;
+        width: 100%;
+    }
+
+    #chat-form button {
+        grid-column: 3;
+        justify-self: end;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    #menu {
+        position: absolute;
+        top: 30%;
+        left: 1rem;
+        animation:
+            upDown 6s ease-in-out infinite,
+            fadeIn 1.5s ease;
+    }
+
+    #collapseMenuButton, #collapseMenuButton:hover {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.7rem;
+        font-family: monospace;
+        color: #333333;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    }
+
+    #collapseMenuButton[aria-expanded="true"] {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #collapseMenu ul {
+        list-style-type: none;
+        font-size: 1.1rem;
+        font-family: "Lucida Console", monospace;
+        letter-spacing: 0.03em;
+        margin: 0.5rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+        padding: 0;
+    }
+
+    #collapseMenu a {
+        color: rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+    }
+
+    #collapseMenu :is(a.active, a:hover) {
+        color: rgba(0, 0, 0, 0.45);
+    }
+}
